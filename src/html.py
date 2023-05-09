@@ -15,7 +15,7 @@ def html(title, text, image_path):
     - None
     """
     # Load the HTML template
-    with open('/content/drive/MyDrive/mani/in/html/manifesto_template.html') as f:
+    with open('./in/html/manifesto_template.html') as f:
         html_template = f.read()
 
     # Convert the text to HTML
