@@ -2,12 +2,12 @@ import os
 import sys
 import argparse
 import gradio as gr
-from src.monochrome import Monochrome
+# from src.monochrome import Monochrome
 from src.user import user
 from src.bot import bot
 
 def main(debug, share, image_width, image_height):
-    with gr.Blocks(theme=Monochrome()) as demo:
+    with gr.Blocks(theme='Monochrome') as demo:
         gr.Markdown("# Oracle of All Beings `v.0.0.1`")
         gr.Markdown("## Please select the text box and press the `Enter` Key")
         chatbot = gr.Chatbot(label="Oracle of All Beings")
