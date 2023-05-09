@@ -2,7 +2,7 @@ import openai
 from src.parse_affirmation import parse_affirmation
 from src.unstable import unstable
 from src.html import html
-
+message_history = []
 def generate_bot_response(input):
     message_history.append({"role": "user", "content": input})
 
