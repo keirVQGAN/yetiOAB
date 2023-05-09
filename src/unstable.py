@@ -29,7 +29,7 @@ def unstable(title, guide_being, image):
         image_response = requests.get(image_url)
 
         # Save the image
-        output_directory = f'/content/drive/MyDrive/yetiChat/out/{title}/image'
+        output_directory = f'./out/{title}/image'
         os.makedirs(output_directory, exist_ok=True)
 
         with open(f'{output_directory}/{guide_being}.jpg', 'wb') as image_file:
