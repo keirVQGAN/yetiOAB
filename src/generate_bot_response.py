@@ -22,14 +22,14 @@ def generate_bot_response(input):
         prompt = affirmation_data["Image"]
         guide_being = affirmation_data["Guide Being"].rstrip(",")
         text = affirmation_data["Text"]
-        output_dir = f"/content/drive/MyDrive/yetiChat/out/{title}"
+        output_dir = f"./out/{title}"
         image_path = f"{output_dir}/image/{guide_being}.jpg"
         os.makedirs(output_dir, exist_ok=True)
 
         with open(f"{output_dir}/{title}.json", "w") as individual_file:
             individual_file.write(json_data)
 
-        with open("/content/drive/MyDrive/yetiChat/out/json_master.json", "a") as master_file:
+        with open("./out/json_master.json", "a") as master_file:
             master_file.write(json_data + "\n")
 
         print(json_data)
