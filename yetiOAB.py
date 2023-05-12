@@ -7,7 +7,9 @@ from src.bot import bot
 
 def main(debug, share, image_width, image_height, openai_api):
     openai.api_key = openai_api
-
+    txt.submit(user, [txt, chatbot], [txt, chatbot], queue=False).then(
+        bot, chatbot, chatbot, openai_api_key
+    )
     with gr.Blocks(theme='Monochrome') as demo:
         gr.Markdown("# Oracle of All Beings `v.0.0.1`")
         gr.Markdown("## Please select the text box and press the `Enter` Key")
@@ -23,6 +25,7 @@ def main(debug, share, image_width, image_height, openai_api):
     demo.launch(debug=debug, share=share)
 
 if __name__ == '__main__':
+    parser.add_argument('--openai_api_key', type=str, required=True, help='OpenAI API Key')
     parser = argparse.ArgumentParser(description='Run Oracle of All Beings')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     parser.add_argument('--share', action='store_true', help='Enable sharing mode')
