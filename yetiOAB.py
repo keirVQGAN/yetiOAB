@@ -5,7 +5,9 @@ import gradio as gr
 from src.user import user
 from src.bot import bot
 
-def main(debug, share, image_width, image_height):
+def main(debug, share, image_width, image_height, openai_api):
+    openai.api_key = openai_api
+
     with gr.Blocks(theme='Monochrome') as demo:
         gr.Markdown("# Oracle of All Beings `v.0.0.1`")
         gr.Markdown("## Please select the text box and press the `Enter` Key")
