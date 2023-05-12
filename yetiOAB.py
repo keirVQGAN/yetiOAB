@@ -2,7 +2,6 @@ import os
 import sys
 import argparse
 import gradio as gr
-# from src.monochrome import Monochrome
 from src.user import user
 from src.bot import bot
 
@@ -27,7 +26,8 @@ if __name__ == '__main__':
     parser.add_argument('--share', action='store_true', help='Enable sharing mode')
     parser.add_argument('--width', type=int, default=720, help='Image width')
     parser.add_argument('--height', type=int, default=720, help='Image height')
+    parser.add_argument('--api', type=str, required=True, help='OpenAI API key')
 
     args = parser.parse_args()
 
-    main(args.debug, args.share, args.width, args.height)
+    main(args.debug, args.share, args.width, args.height, args.api)
