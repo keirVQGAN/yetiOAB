@@ -1,7 +1,9 @@
 import time
 from src.generate_bot_response import generate_bot_response
 
-def bot(history):
+def bot(history, openai_api_key):
+    user_message = history[-1][0]
+    bot_response = generate_bot_response(user_message, openai_api_key)
     user_message = history[-1][0]
     bot_response = generate_bot_response(user_message)
     history[-1] = (user_message, "")
