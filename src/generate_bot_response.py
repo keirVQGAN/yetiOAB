@@ -40,4 +40,4 @@ def generate_bot_response(input):
     message_history.append({"role": "assistant", "content": reply_content})
 
     response = [(message_history[i]["content"], message_history[i+1]["content"]) for i in range(2, len(message_history)-1, 2)]
-    return response
+    return response if response else [("","")]
