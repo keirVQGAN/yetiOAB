@@ -3,7 +3,8 @@ from src.parse_affirmation import parse_affirmation
 from src.unstable import unstable
 from src.html import html
 message_history = []
-def generate_bot_response(input):
+def generate_bot_response(input, openai_api_key):
+    openai.api_key = openai_api_key
     message_history.append({"role": "user", "content": input})
 
     completion = openai.ChatCompletion.create(
